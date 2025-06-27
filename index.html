@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Cube Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Speed Cube Timer</h1>
+            <p>Professional speedcubing timer with statistics</p>
+        </div>
+
+        <div class="timer-section">
+            <div class="scramble" id="scramble">
+                R U R' F R F' U F' U' F R U R' U'
+            </div>
+
+            <div class="timer-status" id="status">Press and hold SPACEBAR to start</div>
+            <div class="timer-display" id="timer">0.00</div>
+
+            <button class="btn" onclick="generateScramble()">New Scramble</button>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="lastSolve">-</div>
+                <div class="stat-label">Last Solve</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="bestSolve">-</div>
+                <div class="stat-label">Best Time</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="ao5">-</div>
+                <div class="stat-label">Ao5 (Average of 5)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="ao12">-</div>
+                <div class="stat-label">Ao12 (Average of 12)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalSolves">0</div>
+                <div class="stat-label">Total Solves</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="sessionAvg">-</div>
+                <div class="stat-label">Session Average</div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <div class="history-header">
+                <h2>Solve History</h2>
+                <div>
+                    <button class="btn" onclick="exportSolves()">📊 Export CSV</button>
+                    <button class="btn btn-danger" onclick="clearHistory()">🗑️ Clear All</button>
+                </div>
+            </div>
+            <div id="solveHistory"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
